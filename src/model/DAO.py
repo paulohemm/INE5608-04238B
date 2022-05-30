@@ -23,9 +23,9 @@ class DAO(ABC):
         self._temp[chave] = objeto
         self.__salva()
 
-    def remover(self, key):
+    def remover(self, chave):
         try:
-            self._temp.pop(key)
+            self._temp.pop(chave)
             self.__salva()
         except:
             raise KeyError
@@ -35,3 +35,6 @@ class DAO(ABC):
             return self._temp[chave]
         except:
             raise KeyError
+
+    def listar(self):
+        return self._temp.values()

@@ -11,5 +11,5 @@ class AlunoDAO(DAO):
     def capturar_aluno(self, aluno: Aluno):
         return super().capturar(aluno.cpf)
 
-    def remover_aluno(self, aluno: Aluno):
-        return super().remover(aluno.cpf)
+    def remover_aluno(self, chave):
+        return super().remover(chave)
