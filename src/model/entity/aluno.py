@@ -1,8 +1,8 @@
-from pessoa import Pessoa
+from .pessoa import Pessoa
 
 class Aluno(Pessoa):
-    def __init__(self, nivel_do_aluno):
-        super().__init__()
+    def __init__(self, cpf, idade, nome, peso, senha, nivel_do_aluno):
+        super().__init__(cpf, idade, nome, peso, senha)
         self._nivel_do_aluno = nivel_do_aluno
         self._tipo_de_conta = 'Aluno'
 

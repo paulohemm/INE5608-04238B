@@ -1,12 +1,10 @@
 from abc import ABC, abstractmethod
-import uuid
 
 class Pessoa(ABC):
     @abstractmethod
     def __init__(self, cpf, idade, nome, peso, senha):
         self._cpf = cpf
         self._idade = idade
-        self._id = uuid.uuid4()
         self._nome = nome
         self._peso = peso
         self._senha = senha
@@ -26,10 +24,6 @@ class Pessoa(ABC):
     @idade.setter
     def idade(self, idade):
         self._idade = idade
-
-    @property
-    def id(self):
-        return self._id
 
     @property
     def nome(self):
