@@ -22,6 +22,7 @@ class DAO(ABC):
     def adicionar(self, chave, objeto):
         self._temp[chave] = objeto
         self.__salva()
+        print(objeto.cpf) #apenas pra teste retirar apos
 
     def remover(self, chave):
         try:
@@ -32,9 +33,11 @@ class DAO(ABC):
 
     def capturar(self, chave):
         try:
+            print(self._temp[chave].cpf) #apenas pra teste retirar apos
             return self._temp[chave]
         except:
             raise KeyError
 
     def listar(self):
+        print(self._temp.values()) #apenas pra teste retirar apos
         return self._temp.values()

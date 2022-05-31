@@ -1,2 +1,2 @@
-from .pessoa import Pessoa
+from .abstractUsuario import Usuario
 from .aluno import Aluno

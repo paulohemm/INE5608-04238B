@@ -1,15 +1,14 @@
-from .pessoa import Pessoa
+from .abstractAtleta import Atleta
 
-class Aluno(Pessoa):
-    def __init__(self, cpf, idade, nome, peso, senha, nivel_do_aluno):
-        super().__init__(cpf, idade, nome, peso, senha)
-        self._nivel_do_aluno = nivel_do_aluno
-        self._tipo_de_conta = 'Aluno'
+class Aluno(Atleta):
+    def __init__(self, cpf, senha, idade, peso, nivel='Iniciante'):
+        super().__init__(cpf, senha, idade, peso)
+        self._nivel = nivel
 
     @property
-    def nivel_do_aluno(self):
-        return self._nivel_do_aluno
+    def nivel(self):
+        return self._nivel
 
-    @nivel_do_aluno.setter
-    def nivel(self, nivel_do_aluno):
-        self._nivel_do_aluno = nivel_do_aluno
+    @nivel.setter
+    def nivel(self, nivel):
+        self._nivel = nivel
